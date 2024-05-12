@@ -23,6 +23,7 @@ Hello from Docker!
 `)
 }
 func main() {
+	fmt.Println("Berke, go app...")
 	http.HandleFunc("/", handler)
 	log.Fatal(http.ListenAndServe(":80", nil))
 }
