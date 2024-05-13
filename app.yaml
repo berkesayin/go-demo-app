@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    com.docker.project: go-demo
+  name: go-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      com.docker.project: go-demo
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        com.docker.project: go-demo
+    spec:
+      containers:
+        - name: go-demo
+          image: berkesayin/go-demo-app:1.0
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          resources: {}
+      restartPolicy: Always
+status: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-demo
+spec:
+  ports:
+    - name: 80-tcp
+      port: 80
+      protocol: TCP
+      targetPort: 80
+  selector:
+    com.docker.project: go-demo
+  type: LoadBalancer
+status:
+  loadBalancer: {}

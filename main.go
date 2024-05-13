@@ -18,7 +18,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
  \    \         __/
   \____\_______/
 	
-Hello from Docker!
+I'm Berke, Hello from Docker!
 
 `)
 }
