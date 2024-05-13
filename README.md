@@ -7,12 +7,12 @@
 - Kubernetes
 - GitHub Actions - CI/CD
 
-### Docker Image
+### Technologies
 The image for the Go App: https://hub.docker.com/r/berkesayin/go-demo-app/.
 
 The image is built and pushed to `DockerHub` using `GitHub Actions` with `CI/CD`. It is continuously updated after each push to the `master` branch.
 
-## Usage
+## Usage
 
 - Use the application with Docker Image and Kubernetes deployment.
 
